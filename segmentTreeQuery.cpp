@@ -43,7 +43,9 @@ int query(int node, int b, int e, int i, int j)
 int main()
 {
     int n;
+    cout << "Enter array size: ";
     cin >> n;
+    cout << "Enter the element : ";
 
     for(int i=1; i<=n; i++)
     {
@@ -51,7 +53,7 @@ int main()
     }
 
     init(1, 1, n);
-    int sum = query(1, 1, n, 1, 2);
+    int sum = query(1, 1, n, 3, 5);
     
     cout << "Sum is: " << sum << endl;
 }
