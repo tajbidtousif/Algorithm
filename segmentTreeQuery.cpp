@@ -56,4 +56,6 @@ int main()
     int sum = query(1, 1, n, 3, 5);
     
     cout << "Sum is: " << sum << endl;
+
+    return 0;
 }
