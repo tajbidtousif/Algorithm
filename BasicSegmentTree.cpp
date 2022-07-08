@@ -27,9 +27,7 @@ int main()
 {
     int n;
     cin >> n;
-
-    //repl(i,n) cin >> ar[i];
-
+    
     for(int i=0; i<n; i++)
     {
         cin >> ar[i];
