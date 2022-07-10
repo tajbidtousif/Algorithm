@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int mx = 100005;
+const int mx = 1005;
 int ar[mx];
 int tree[mx*4];
 
@@ -20,27 +20,27 @@ void init(int node, int b, int e)
     tree[node] = tree[Left] + tree[Right];
 }
 
-int update(int node, int b, int e, int i, int newnode)
+void update(int node, int b, int e, int i, int newnode)
 {
-    if(b<i || e>i)
+    if(b>i || e<i)
     {
-       return 0;
+       return;
     }
 
     if(b>=i && e<=i)
     {
         tree[node] = newnode;
-        return 0;
+        return;
     }
 
     int left = node*2;
     int right = (node*2)+1;
     int mid = (b+e)/2;
-    
-    update(left,b,mid,i,newnode);
-    update(right, mid+1,e,i,newnode);
 
-     tree[node] = tree[left] + tree[right];
+    update(left, b, mid, i, newnode);
+    update(right, mid+1, e, i, newnode);
+
+    tree[node] = tree[left] + tree[right];
 }
 
 int main()
@@ -49,8 +49,8 @@ int main()
 
     cout << "Size of array : ";
     cin >> n;
-    
-    for(int i=0; i<n; i++)
+
+    for(int i=1; i<=n; i++)
     {
         cin >> ar[i];
     }
@@ -65,4 +65,5 @@ int main()
     {
         cout << ar[i] << " ";
     }
+
 }
