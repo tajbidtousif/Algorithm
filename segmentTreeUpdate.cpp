@@ -7,7 +7,7 @@ int tree[mx*4];
 
 void init(int node, int b, int e)
 {
-    if (b == e) {
+    if (b == e) {      // base case
         tree[node] = ar[b];
         return;
     }
