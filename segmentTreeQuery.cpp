@@ -23,7 +23,7 @@ int query(int node, int b, int e, int i, int j)
 {
     if (i > e || j < b)
        { 
-        return 0; 
+        return 0;
        }
 
     if (b >= i && e <= j)
