@@ -22,7 +22,7 @@ void init(int node, int b, int e)
 
 void update(int node, int b, int e, int i, int newnode)
 {
-    if(b>i || e<i)
+    if(i > e || i < b)
     {
        return;
     }
